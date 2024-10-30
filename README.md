@@ -10,6 +10,8 @@ Before running the application, create an empty `.env` file in the root of the p
 
 ## Important - Running the Application
 
+First run `npm install` on order to install the packages and their associated dependencies.
+
 Run `npm start` to run the application and then navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Reverse Proxy
@@ -34,9 +36,9 @@ All core features have been implemented according to the guidance document. The 
 
 Input validation has been implemented on the company search page using Angular Reactive Forms.
 
-### Root Guards
+### Route Guards
 
-A Root Guard has been applied to the company details page (i.e. subsequent to click a search result). The implements a mock Login Page to authenticate the user. Cookies have been used to store the logged in state. Please clear the cookies for the site if you wish to retest the guard multiple times.
+A Route Guard has been applied to the company details page (i.e. subsequent to click a search result). The implements a mock Login Page to authenticate the user. Cookies have been used to store the logged in state. Please clear the cookies for the site if you wish to retest the guard multiple times.
 
 ### Paging
 
