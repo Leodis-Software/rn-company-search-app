@@ -1,0 +1,11 @@
+@import "../../../mixins.scss";
+
+.title-value-field {
+  @include flex-column-container();
+
+  margin-top: 10px;
+
+  .prominent {
+    font-weight: 600;
+  }
+}

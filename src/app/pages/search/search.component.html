@@ -1,0 +1,19 @@
+<div class="search-container">
+  <div class="search-controls-container">
+    <app-search-box
+      *ngIf="!searchResults && !isSearching"
+      searchHint="Company Name or Number"
+      (searchSubmitted)="searchCompanies($event)"
+    ></app-search-box>
+  </div>
+</div>
+
+<mat-progress-spinner
+  *ngIf="isSearching"
+  mode="indeterminate"
+></mat-progress-spinner>
+
+<div *ngIf="searchResults && !isSearching">
+  <h3>Search Results</h3>
+  <app-company-list [companies]="searchResults.items"></app-company-list>
+</div>

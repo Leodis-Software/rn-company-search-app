@@ -1,0 +1,48 @@
+<div *ngIf="companyDetails" class="flex-column-container">
+  <app-company-summary [companyDetails]="companyDetails"></app-company-summary>
+</div>
+
+<div *ngIf="!companyDetails && !isLoading">
+  <span>Company could not be found</span>
+</div>
+
+<mat-progress-spinner
+  *ngIf="isLoading"
+  mode="indeterminate"
+></mat-progress-spinner>
+
+<div *ngIf="companyDetails && companyView" class="flex-column-container">
+  <app-title-value-field
+    title="Registered office address"
+    value="{{ companyDetails.address_snippet }}"
+    [prominentValue]="true"
+  ></app-title-value-field>
+  <app-title-value-field
+    title="Company status"
+    value="{{ companyDetails.company_status | uppercase }}"
+    [prominentValue]="true"
+  ></app-title-value-field>
+  <app-title-value-field
+    title="Company type"
+    value="{{ companyDetails.company_type | uppercase }}"
+    [prominentValue]="true"
+  ></app-title-value-field>
+  <app-title-value-field
+    title="Incorporated on"
+    value="{{ companyDetails.date_of_creation | date : 'd MMMM yyyy' }}"
+    [prominentValue]="true"
+  ></app-title-value-field>
+  <a class="list-officers-link" href (click)="switchToOfficersView()"
+    >List Officers</a
+  >
+</div>
+
+<div *ngIf="companyOfficers && officersView" class="flex-column-container">
+  <div *ngFor="let companyOfficer of companyOfficers">
+    <app-title-value-field
+      title="{{ companyOfficer.name }}"
+      value="{{ companyOfficer.officer_role }}"
+      [prominentTitle]="true"
+    ></app-title-value-field>
+  </div>
+</div>

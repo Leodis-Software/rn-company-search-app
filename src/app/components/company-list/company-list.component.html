@@ -1,0 +1,14 @@
+<div *ngIf="companies">
+  <div class="company-list-item-container" *ngFor="let company of companies">
+    <a routerLink="/company/{{ company.company_number }}">{{
+      company.title
+    }}</a>
+    <span
+      ><b>{{ company.company_number }}</b> - Incorporated on
+      {{ company.date_of_creation | date : "d MMMM yyyy" }}</span
+    >
+    <span>{{ company.address_snippet }}</span>
+  </div>
+</div>
+
+<div *ngIf="!companies">No companies found</div>

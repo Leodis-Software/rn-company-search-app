@@ -1,0 +1,20 @@
+@import '../../../mixins.scss';
+
+.login-container
+{
+    @include flex-column-container();
+
+    align-items: center;
+
+    .login-controls-container
+    {
+        @include flex-column-container();
+
+        width: 70%;
+
+        .login-button
+        {
+            width: 100px;
+        }
+    }
+}

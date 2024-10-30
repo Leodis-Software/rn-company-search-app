@@ -1,0 +1,14 @@
+.menu-bar-container {
+  a {
+    margin: 10px;
+  }
+}
+
+.application-container {
+  width: calc(100% - 40px);
+  padding: 20px;
+  box-shadow: 1px 1px 3px grey;
+  border-radius: 10px;
+  background: #fdfdfd;
+  margin-top: 10px;
+}

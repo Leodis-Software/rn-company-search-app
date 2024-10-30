@@ -1,0 +1,7 @@
+@import "../../../mixins.scss";
+
+.company-list-item-container {
+  @include flex-column-container();
+
+  margin-bottom: 10px;
+}

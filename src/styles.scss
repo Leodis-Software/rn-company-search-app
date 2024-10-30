@@ -1,0 +1,31 @@
+@use "@angular/material" as mat;
+@import "./mixins.scss";
+
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+  )
+);
+
+html {
+  width: 100%;
+}
+body {
+  background-color: azure;
+  margin: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  @include mat.all-component-themes($theme);
+}
+
+.flex-column-container
+{
+  @include flex-column-container();
+}
+
+@include mat.core();
+@include mat.color-variants-backwards-compatibility($theme);

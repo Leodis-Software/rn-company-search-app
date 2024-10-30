@@ -1,0 +1,13 @@
+@import '../../../mixins.scss';
+
+.search-container
+{
+    @include flex-column-container();
+
+    align-items: center;
+
+    .search-controls-container
+    {
+        width: 50%;
+    }
+}

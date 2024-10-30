@@ -1,0 +1,21 @@
+<form [formGroup]="searchForm" (submit)="submitSearch(searchTerm.value)">
+    <div class="search-box-container">
+      <mat-form-field>
+        <input
+          formControlName="searchTerm"
+          matInput
+          type="search"
+          placeholder={{searchHint}}
+          #searchTerm
+        />
+      </mat-form-field>
+  
+      <mat-error class="validation-error" *ngIf="searchForm.dirty && !searchForm.valid">
+        Please enter a valid search term between 3 and 20 characters
+      </mat-error>
+  
+      <button mat-raised-button type="submit" [disabled]="!searchForm.valid">
+        Search
+      </button>
+    </div>
+  </form>
